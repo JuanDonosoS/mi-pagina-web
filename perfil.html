@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     PERFIL DE UN PROFESIONAL
+     Es una sola página para todos: js/perfil.js lee el "id" de la
+     dirección (perfil.html?id=rodrigo-fuentes) y muestra sus datos.
+     ===================================================================== -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil · ServiSexta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="pagina-perfil">
+
+  <div class="aviso-demo">Versión de demostración: los profesionales y evaluaciones que ves son de ejemplo.</div>
+
+  <header class="encabezado">
+    <div class="contenedor encabezado__fila">
+      <a href="index.html" class="logo"><span class="logo__marca"><span data-icono="escudo"></span></span><span>Servi<strong>Sexta</strong></span></a>
+      <button class="boton-icono menu-boton" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-boton><span data-icono="menu"></span></button>
+      <nav class="navegacion" data-menu aria-label="Menú principal">
+        <a href="profesionales.html">Profesionales</a>
+        <a href="index.html#como-funciona">Cómo funciona</a>
+        <a href="index.html#garantia">Garantía</a>
+        <a href="index.html#preguntas">Preguntas</a>
+        <a href="#" class="boton boton--borde" data-unirse>Soy profesional</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Todo el contenido del perfil lo crea js/perfil.js -->
+  <main id="perfil"></main>
+
+  <!-- Ventana para solicitar el servicio -->
+  <dialog class="dialogo" id="dialogo-solicitud" aria-labelledby="titulo-solicitud">
+    <div class="dialogo__cabecera">
+      <div>
+        <p class="texto-suave" style="margin:0">Solicitar servicio a</p>
+        <h2 id="titulo-solicitud"></h2>
+      </div>
+      <button class="boton-icono" type="button" data-cerrar aria-label="Cerrar"><span data-icono="cerrar"></span></button>
+    </div>
+    <form class="formulario" id="formulario-solicitud">
+      <label>Tu nombre
+        <input class="campo-texto" name="nombre" required autocomplete="name" placeholder="Ej: María González">
+      </label>
+      <div class="formulario__fila">
+        <label>Comuna
+          <select class="campo-select" name="comuna" required></select>
+        </label>
+        <label>Servicio
+          <select class="campo-select" name="servicio" required></select>
+        </label>
+      </div>
+      <div class="formulario__fila">
+        <label>Fecha preferida
+          <input class="campo-texto" type="date" name="fecha">
+        </label>
+        <label>Horario
+          <select class="campo-select" name="horario">
+            <option>Flexible</option>
+            <option>Mañana (9 a 13 h)</option>
+            <option>Tarde (14 a 19 h)</option>
+          </select>
+        </label>
+      </div>
+      <label>¿Qué necesitas?
+        <textarea class="campo-texto" name="detalle" required placeholder="Describe el problema o trabajo. Ej: el calefont se apaga a los pocos minutos."></textarea>
+      </label>
+      <button class="boton boton--primario boton--ancho boton--grande" type="submit"><span data-icono="mensaje"></span> Enviar solicitud por WhatsApp</button>
+      <p class="formulario__nota">Te respondemos para confirmar el precio y el horario antes de agendar. Enviar la solicitud no te compromete a nada.</p>
+    </form>
+  </dialog>
+
+  <!-- Ventana para ver fotos en grande -->
+  <dialog class="dialogo dialogo--imagen" id="dialogo-imagen">
+    <button class="boton-icono" type="button" data-cerrar aria-label="Cerrar"><span data-icono="cerrar"></span></button>
+    <img src="" alt="">
+    <p></p>
+  </dialog>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__grilla">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__marca"><span data-icono="escudo"></span></span><span>Servi<strong>Sexta</strong></span></a>
+          <p>Profesionales de confianza a domicilio en la Región del Libertador General Bernardo O'Higgins.</p>
+        </div>
+        <div>
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="profesionales.html?servicio=gasfiteria">Gasfitería</a></li>
+            <li><a href="profesionales.html?servicio=mecanica">Mecánica a domicilio</a></li>
+            <li><a href="profesionales.html?servicio=muebles">Armado de muebles</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>ServiSexta</h3>
+          <ul>
+            <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+            <li><a href="index.html#garantia">Garantía</a></li>
+            <li><a href="index.html#preguntas">Preguntas frecuentes</a></li>
+            <li><a href="#" data-unirse>Soy profesional</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__legal">© <span data-anio>2026</span> ServiSexta · Región de O'Higgins, Chile</p>
+    </div>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/perfil.js"></script>
+</body>
+</html>
