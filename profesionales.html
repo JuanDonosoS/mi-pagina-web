@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     LISTADO DE PROFESIONALES con filtros y orden
+     ===================================================================== -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profesionales · ServiSexta</title>
+  <meta name="description" content="Compara gasfíteres, mecánicos y armadores de muebles evaluados por clientes reales en la Región de O'Higgins.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="aviso-demo">Versión de demostración: los profesionales y evaluaciones que ves son de ejemplo.</div>
+
+  <header class="encabezado">
+    <div class="contenedor encabezado__fila">
+      <a href="index.html" class="logo"><span class="logo__marca"><span data-icono="escudo"></span></span><span>Servi<strong>Sexta</strong></span></a>
+      <button class="boton-icono menu-boton" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-boton><span data-icono="menu"></span></button>
+      <nav class="navegacion" data-menu aria-label="Menú principal">
+        <a href="profesionales.html" aria-current="page">Profesionales</a>
+        <a href="index.html#como-funciona">Cómo funciona</a>
+        <a href="index.html#garantia">Garantía</a>
+        <a href="index.html#preguntas">Preguntas</a>
+        <a href="#" class="boton boton--borde" data-unirse>Soy profesional</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="cabecera-pagina">
+      <div class="contenedor">
+        <nav class="migas" aria-label="Ruta"><a href="index.html">Inicio</a> <span>›</span> <span id="miga-actual">Profesionales</span></nav>
+        <h1 id="titulo-listado">Profesionales</h1>
+        <p>Todos con evaluaciones de clientes. Compara y elige con tranquilidad.</p>
+      </div>
+    </div>
+
+    <div class="contenedor listado">
+      <!-- ============================== FILTROS ============================== -->
+      <aside class="filtros" id="filtros" aria-label="Filtros">
+        <div class="filtros__titulo">
+          <h2><span data-icono="filtro"></span> Filtros</h2>
+          <button class="boton-texto" type="button" id="limpiar-filtros">Limpiar</button>
+        </div>
+
+        <fieldset class="grupo-filtro">
+          <legend>Servicio</legend>
+          <div id="filtro-servicio">
+            <!-- Se llena desde js/listado.js -->
+          </div>
+        </fieldset>
+
+        <div class="grupo-filtro">
+          <label for="filtro-comuna">Comuna</label>
+          <select class="campo-select" id="filtro-comuna">
+            <option value="">Todas las comunas</option>
+          </select>
+        </div>
+
+        <div class="grupo-filtro">
+          <label for="filtro-nota">Nota mínima</label>
+          <select class="campo-select" id="filtro-nota">
+            <option value="0">Cualquier nota</option>
+            <option value="4.5">4,5 ★ o más</option>
+            <option value="4">4,0 ★ o más</option>
+          </select>
+        </div>
+
+        <fieldset class="grupo-filtro">
+          <legend>Confianza</legend>
+          <label class="opcion"><input type="checkbox" id="filtro-verificado"> Solo verificados</label>
+          <label class="opcion"><input type="checkbox" id="filtro-sec"> Certificado SEC (gas)</label>
+        </fieldset>
+      </aside>
+
+      <!-- ============================== RESULTADOS ============================== -->
+      <section aria-live="polite">
+        <div class="resultados__barra">
+          <button class="boton boton--borde boton-filtros" type="button" id="boton-filtros" aria-controls="filtros" aria-expanded="false"><span data-icono="filtro"></span> Filtros</button>
+          <strong id="contador">0 profesionales</strong>
+          <label>Ordenar por
+            <select class="campo-select" id="orden">
+              <option value="nota">Mejor evaluados</option>
+              <option value="resenas">Más evaluaciones</option>
+              <option value="trabajos">Más trabajos realizados</option>
+              <option value="precio">Precio más bajo</option>
+            </select>
+          </label>
+        </div>
+        <div class="grilla-pros grilla-pros--listado" id="resultados"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__grilla">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__marca"><span data-icono="escudo"></span></span><span>Servi<strong>Sexta</strong></span></a>
+          <p>Profesionales de confianza a domicilio en la Región del Libertador General Bernardo O'Higgins.</p>
+        </div>
+        <div>
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="profesionales.html?servicio=gasfiteria">Gasfitería</a></li>
+            <li><a href="profesionales.html?servicio=mecanica">Mecánica a domicilio</a></li>
+            <li><a href="profesionales.html?servicio=muebles">Armado de muebles</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>ServiSexta</h3>
+          <ul>
+            <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+            <li><a href="index.html#garantia">Garantía</a></li>
+            <li><a href="index.html#preguntas">Preguntas frecuentes</a></li>
+            <li><a href="#" data-unirse>Soy profesional</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__legal">© <span data-anio>2026</span> ServiSexta · Región de O'Higgins, Chile</p>
+    </div>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/listado.js"></script>
+</body>
+</html>

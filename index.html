@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     PORTADA (página de inicio)
+     El HTML define el CONTENIDO y la ESTRUCTURA: títulos, textos,
+     botones y secciones. El diseño está en css/styles.css y la parte
+     interactiva en la carpeta js/.
+     ===================================================================== -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Hace que la página se adapte bien a la pantalla del celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ServiSexta · Profesionales de confianza a domicilio en la Región de O'Higgins</title>
+  <meta name="description" content="Encuentra gasfíteres, mecánicos y armadores de muebles verificados y evaluados por clientes reales en Rancagua y toda la Región de O'Higgins.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="aviso-demo">Versión de demostración: los profesionales y evaluaciones que ves son de ejemplo.</div>
+
+  <!-- ============================== ENCABEZADO ============================== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado__fila">
+      <a href="index.html" class="logo"><span class="logo__marca"><span data-icono="escudo"></span></span><span>Servi<strong>Sexta</strong></span></a>
+      <button class="boton-icono menu-boton" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-boton><span data-icono="menu"></span></button>
+      <nav class="navegacion" data-menu aria-label="Menú principal">
+        <a href="profesionales.html">Profesionales</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#garantia">Garantía</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#" class="boton boton--borde" data-unirse>Soy profesional</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================== PORTADA (HERO) ============================== -->
+    <section class="hero">
+      <div class="contenedor"><div class="hero__contenido">
+        <span class="hero__etiqueta"><span data-icono="ubicacion"></span> Rancagua y toda la Región de O'Higgins</span>
+        <h1>Profesionales <span>de confianza</span> en la puerta de tu casa</h1>
+        <p class="hero__bajada">Gasfíteres, mecánicos y armadores de muebles verificados y evaluados por clientes reales. Compara, elige y nosotros te respaldamos.</p>
+
+        <!-- Buscador: al enviarlo lleva a profesionales.html con los filtros elegidos -->
+        <form class="buscador" action="profesionales.html" method="get">
+          <div class="buscador__campo">
+            <label for="buscar-servicio">¿Qué necesitas?</label>
+            <select id="buscar-servicio" name="servicio">
+              <option value="">Todos los servicios</option>
+            </select>
+          </div>
+          <div class="buscador__campo">
+            <label for="buscar-comuna">¿Dónde?</label>
+            <select id="buscar-comuna" name="comuna">
+              <option value="">Todas las comunas</option>
+            </select>
+          </div>
+          <button class="boton boton--primario boton--grande" type="submit"><span data-icono="buscar"></span> Buscar</button>
+        </form>
+
+        <div class="hero__confianza">
+          <span><span data-icono="check"></span> Identidad y antecedentes revisados</span>
+          <span><span data-icono="check"></span> Evaluaciones de clientes reales</span>
+          <span><span data-icono="check"></span> Te respaldamos si algo sale mal</span>
+        </div>
+      </div></div>
+    </section>
+
+    <!-- ============================== ESTADÍSTICAS ============================== -->
+    <div class="contenedor">
+      <div class="estadisticas" id="estadisticas">
+        <!-- Se llena desde js/inicio.js -->
+      </div>
+    </div>
+
+    <!-- ============================== SERVICIOS ============================== -->
+    <section class="seccion" id="servicios">
+      <div class="contenedor">
+        <div class="seccion__titulo">
+          <h2>¿Qué servicio necesitas?</h2>
+          <p>Partimos con los tres servicios más pedidos en la región. Pronto sumaremos más.</p>
+        </div>
+        <div class="categorias" id="categorias">
+          <!-- Se llena desde js/inicio.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== MEJOR EVALUADOS ============================== -->
+    <section class="seccion seccion--blanca">
+      <div class="contenedor">
+        <div class="encabezado-seccion">
+          <div class="seccion__titulo seccion__titulo--izquierda">
+            <h2>Los mejor evaluados</h2>
+            <p>Profesionales con las notas más altas según sus clientes.</p>
+          </div>
+          <a href="profesionales.html" class="enlace-flecha">Ver todos <span data-icono="flecha"></span></a>
+        </div>
+        <div class="grilla-pros" id="destacados">
+          <!-- Se llena desde js/inicio.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CÓMO FUNCIONA ============================== -->
+    <section class="seccion" id="como-funciona">
+      <div class="contenedor">
+        <div class="seccion__titulo">
+          <h2>Cómo funciona</h2>
+          <p>Contratar a alguien de confianza debería ser simple. Así lo hacemos.</p>
+        </div>
+        <div class="pasos">
+          <div class="paso">
+            <div class="paso__numero"><span data-icono="buscar"></span></div>
+            <h3>Busca</h3>
+            <p>Elige el servicio y tu comuna para ver a los profesionales disponibles.</p>
+          </div>
+          <div class="paso">
+            <div class="paso__numero"><span data-icono="medalla"></span></div>
+            <h3>Compara</h3>
+            <p>Revisa sus notas por criterio, comentarios, fotos de trabajos y precios referenciales.</p>
+          </div>
+          <div class="paso">
+            <div class="paso__numero"><span data-icono="mensaje"></span></div>
+            <h3>Solicita</h3>
+            <p>Cuéntanos qué necesitas. Coordinamos el día, la hora y el precio contigo.</p>
+          </div>
+          <div class="paso">
+            <div class="paso__numero"><span data-icono="escudo"></span></div>
+            <h3>Evalúa</h3>
+            <p>Al terminar, califica el trabajo. Tu opinión ayuda a otros vecinos a elegir bien.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== GARANTÍA ============================== -->
+    <section class="seccion seccion--blanca" id="garantia">
+      <div class="contenedor garantia">
+        <div>
+          <div class="seccion__titulo seccion__titulo--izquierda">
+            <h2>Tu tranquilidad es lo primero</h2>
+            <p>No somos solo un directorio: revisamos a cada profesional y respondemos por cada trabajo.</p>
+          </div>
+          <div class="garantia__lista">
+            <div class="garantia__item">
+              <span class="garantia__icono"><span data-icono="escudo"></span></span>
+              <div>
+                <h3>Profesionales verificados</h3>
+                <p>Revisamos cédula de identidad, certificado de antecedentes y, en trabajos de gas, la certificación SEC.</p>
+              </div>
+            </div>
+            <div class="garantia__item">
+              <span class="garantia__icono"><span data-icono="usuario"></span></span>
+              <div>
+                <h3>Solo opinan clientes reales</h3>
+                <p>Cada evaluación corresponde a un trabajo hecho a través de ServiSexta. Nada de reseñas inventadas.</p>
+              </div>
+            </div>
+            <div class="garantia__item">
+              <span class="garantia__icono"><span data-icono="mensaje"></span></span>
+              <div>
+                <h3>Un equipo que responde</h3>
+                <p>Si el trabajo queda mal o hay un problema, nos escribes y lo gestionamos contigo hasta resolverlo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sello">
+          <span data-icono="escudo"></span>
+          <h2>Garantía ServiSexta</h2>
+          <p>Si un trabajo contratado por ServiSexta no queda bien, coordinamos que el profesional vuelva a corregirlo. Y si no es posible, buscamos otra solución contigo.</p>
+          <p>Profesionales con malas evaluaciones repetidas dejan de aparecer en la plataforma.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PREGUNTAS FRECUENTES ============================== -->
+    <section class="seccion" id="preguntas">
+      <div class="contenedor">
+        <div class="seccion__titulo">
+          <h2>Preguntas frecuentes</h2>
+        </div>
+        <div class="preguntas">
+          <details class="pregunta">
+            <summary>¿Cuánto cuesta usar ServiSexta?</summary>
+            <p>Buscar y comparar profesionales es gratis. Solo pagas el servicio que contratas, al precio que acuerdas antes de que empiece el trabajo.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Cómo sé que un profesional es confiable?</summary>
+            <p>Los profesionales con la insignia "Verificado" pasaron nuestra revisión de identidad y antecedentes. Además puedes ver su nota en cinco criterios, los comentarios de otros clientes y fotos de trabajos anteriores.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Qué pasa si el trabajo queda mal?</summary>
+            <p>Escríbenos dentro de los 15 días siguientes al trabajo. Revisamos el caso con ambas partes y coordinamos que se corrija. Ese respaldo es la razón de ser de ServiSexta.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Por qué importa la certificación SEC en gasfitería?</summary>
+            <p>En Chile, las instalaciones y reparaciones de gas deben hacerlas instaladores autorizados por la Superintendencia de Electricidad y Combustibles (SEC). Por tu seguridad, para trabajos con gas elige profesionales con la insignia "Certificado SEC".</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿En qué comunas están disponibles?</summary>
+            <p>Hoy cubrimos Rancagua, Machalí, Graneros, Rengo, San Fernando, Santa Cruz y otras comunas de la Región de O'Higgins. Cada perfil indica en qué comunas trabaja el profesional.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== LLAMADO A PROFESIONALES ============================== -->
+    <section class="contenedor">
+      <div class="cta-pro">
+        <div>
+          <h2>¿Eres gasfíter, mecánico o armas muebles?</h2>
+          <p>Súmate a ServiSexta y recibe clientes de tu zona. Destácate por la calidad de tu trabajo.</p>
+        </div>
+        <a href="#" class="boton boton--primario boton--grande" data-unirse>Quiero unirme <span data-icono="flecha"></span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== PIE DE PÁGINA ============================== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__grilla">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__marca"><span data-icono="escudo"></span></span><span>Servi<strong>Sexta</strong></span></a>
+          <p>Profesionales de confianza a domicilio en la Región del Libertador General Bernardo O'Higgins.</p>
+        </div>
+        <div>
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="profesionales.html?servicio=gasfiteria">Gasfitería</a></li>
+            <li><a href="profesionales.html?servicio=mecanica">Mecánica a domicilio</a></li>
+            <li><a href="profesionales.html?servicio=muebles">Armado de muebles</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>ServiSexta</h3>
+          <ul>
+            <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+            <li><a href="index.html#garantia">Garantía</a></li>
+            <li><a href="index.html#preguntas">Preguntas frecuentes</a></li>
+            <li><a href="#" data-unirse>Soy profesional</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__legal">© <span data-anio>2026</span> ServiSexta · Región de O'Higgins, Chile</p>
+    </div>
+  </footer>
+
+  <!-- Los scripts van al final para que la página cargue primero el contenido -->
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>
